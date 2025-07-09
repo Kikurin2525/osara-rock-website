@@ -1,0 +1,295 @@
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+// Dropdown Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        let hoverTimeout;
+        
+        // Desktop hover functionality
+        if (window.innerWidth > 768) {
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hoverTimeout);
+                dropdown.classList.add('active');
+            });
+            
+            dropdown.addEventListener('mouseleave', function() {
+                hoverTimeout = setTimeout(() => {
+                    dropdown.classList.remove('active');
+                }, 100);
+            });
+        }
+        
+        // Mobile touch functionality
+        if (window.innerWidth <= 768) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other open dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when clicking on submenu item
+        const submenuItems = dropdown.querySelectorAll('.dropdown-menu a');
+        submenuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                dropdown.classList.remove('active');
+                // Close mobile menu if open
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            // Remove active class from all dropdowns on desktop
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});
+
+// Smooth dropdown animation with intersection observer
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    
+    dropdownMenus.forEach(menu => {
+        const items = menu.querySelectorAll('a');
+        
+        // Add stagger animation to dropdown items
+        items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+        
+        // Add focus trap for accessibility
+        menu.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const dropdown = menu.closest('.dropdown');
+                dropdown.classList.remove('active');
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.focus();
+            }
+        });
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Contact form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validate required fields
+            const requiredFields = ['name', 'email', 'message'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = this.querySelector(`[name="${field}"]`);
+                if (!data[field] || data[field].trim() === '') {
+                    input.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailField = this.querySelector('[name="email"]');
+            if (!emailRegex.test(data.email)) {
+                emailField.style.borderColor = '#e74c3c';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                showMessage('お問い合わせありがとうございます。内容を確認の上、ご連絡いたします。', 'success');
+                
+                // Reset form
+                this.reset();
+                
+                // In a real application, you would send the data to a server
+                console.log('Form data:', data);
+            } else {
+                showMessage('必須項目を正しく入力してください。', 'error');
+            }
+        });
+    }
+});
+
+// Show message function
+function showMessage(message, type) {
+    // Remove existing messages
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create message element
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message ${type}`;
+    messageDiv.textContent = message;
+    
+    // Add styles
+    messageDiv.style.padding = '10px';
+    messageDiv.style.marginBottom = '15px';
+    messageDiv.style.borderRadius = '5px';
+    messageDiv.style.fontSize = '14px';
+    
+    if (type === 'success') {
+        messageDiv.style.backgroundColor = '#d4edda';
+        messageDiv.style.color = '#155724';
+        messageDiv.style.border = '1px solid #c3e6cb';
+    } else if (type === 'error') {
+        messageDiv.style.backgroundColor = '#f8d7da';
+        messageDiv.style.color = '#721c24';
+        messageDiv.style.border = '1px solid #f5c6cb';
+    }
+    
+    // Insert message at the top of the form
+    const form = document.querySelector('.contact-form');
+    form.insertBefore(messageDiv, form.firstChild);
+    
+    // Auto-remove message after 5 seconds
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+
+// Add active class to navigation items based on scroll position
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Add scroll effect to header
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = '#fff';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// Animate elements on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.service-card, .about-text, .contact-info');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// Add loading state to form submit button
+document.addEventListener('DOMContentLoaded', function() {
+    const submitButton = document.querySelector('.contact-form button[type="submit"]');
+    const form = document.querySelector('.contact-form');
+    
+    if (form && submitButton) {
+        form.addEventListener('submit', function() {
+            submitButton.textContent = '送信中...';
+            submitButton.disabled = true;
+            
+            // Re-enable button after 3 seconds
+            setTimeout(() => {
+                submitButton.textContent = '送信する';
+                submitButton.disabled = false;
+            }, 3000);
+        });
+    }
+});
