@@ -236,19 +236,17 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Add scroll effect to header
+// Add scroll effect to header - Enhanced Version
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+        header.classList.add('scrolled');
     } else {
-        header.style.backgroundColor = '#fff';
-        header.style.backdropFilter = 'none';
+        header.classList.remove('scrolled');
     }
 });
 
-// Animate elements on scroll
+// Smooth scroll animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -257,20 +255,16 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.service-card, .about-text, .contact-info');
+    const animatedElements = document.querySelectorAll('.service-item, .fade-in');
     
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 });
