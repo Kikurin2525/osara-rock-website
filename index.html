@@ -199,6 +199,7 @@
                     <p style="display: none;">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
+                    <input type="hidden" name="subject" value="【重要】ホームページからお問い合わせ">
                     <div class="form-group">
                         <label for="name">お名前 *</label>
                         <input type="text" id="name" name="name" required>
@@ -215,8 +216,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="subject">お問い合わせ種別</label>
-                        <select id="subject" name="subject">
+                        <label for="inquiry-type">お問い合わせ種別</label>
+                        <select id="inquiry-type" name="inquiry-type">
                             <option value="">選択してください</option>
                             <option value="service">サービスについて</option>
                             <option value="estimate">お見積もり</option>
@@ -251,12 +252,13 @@
         <input type="text" name="name" />
         <input type="text" name="company" />
         <input type="email" name="email" />
-        <select name="subject">
+        <select name="inquiry-type">
             <option value="service">サービスについて</option>
             <option value="estimate">お見積もり</option>
             <option value="support">サポート</option>
             <option value="other">その他</option>
         </select>
+        <input type="hidden" name="subject" value="【重要】ホームページからお問い合わせ">
         <textarea name="message"></textarea>
     </form>
 
