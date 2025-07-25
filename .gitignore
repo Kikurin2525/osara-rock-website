@@ -57,3 +57,6 @@ build/
 
 # System files
 *.orig
+
+# Netlify
+.netlify/

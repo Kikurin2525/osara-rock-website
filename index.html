@@ -3,56 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レンタルスタジオ・レンタルスペース事業｜株式会社オサラロック</title>
-    <meta name="description" content="クリエイティブな空間と戦略的コンサルティングで、あなたのビジネスを次のステージへ">
+    <title>株式会社オサラロック｜レンタルスタジオ・スペース事業</title>
+    <meta name="description" content="あなたが主役として最高に輝けるステージを提供。レンタルスタジオ・スペース事業とコンサルティングで、お客様の成功を全力サポート。">
     
-    <!-- OGP 設定 -->
+    <!-- OGP Meta Tags -->
     <meta property="og:site_name" content="株式会社オサラロック">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="レンタルスタジオ・レンタルスペース事業｜株式会社オサラロック">
-    <meta property="og:description" content="クリエイティブな空間と戦略的コンサルティングで、あなたのビジネスを次のステージへ">
+    <meta property="og:title" content="株式会社オサラロック｜レンタルスタジオ・スペース事業">
+    <meta property="og:description" content="あなたが主役として最高に輝けるステージを提供。レンタルスタジオ・スペース事業とコンサルティングで、お客様の成功を全力サポート。">
     <meta property="og:url" content="https://osara-rock.com/">
     <meta property="og:image" content="https://osara-rock.com/images/ogp-image.jpg">
     
-    <!-- Twitter Card 設定 -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@osara_rock">
-    <meta name="twitter:title" content="レンタルスタジオ・レンタルスペース事業｜株式会社オサラロック">
-    <meta name="twitter:description" content="クリエイティブな空間と戦略的コンサルティングで、あなたのビジネスを次のステージへ">
-    <meta name="twitter:image" content="https://osara-rock.com/images/ogp-image.jpg">
-    
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="images/logo2.png">
     <link rel="apple-touch-icon" href="images/logo2.png">
-    <link rel="shortcut icon" href="images/logo2.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="container">
-                <div class="nav-brand">
-                    <img src="images/logo.png" alt="OSARA ROCK">
-                </div>
+                <a href="#home" class="nav-brand">
+                    <img src="images/logo.png" alt="OSARA ROCK Logo">
+                </a>
+                
                 <ul class="nav-menu">
                     <li><a href="#home">ホーム</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#services" class="nav-link dropdown-toggle">事業内容</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="pages/studios.html">レンタルスタジオ・レンタルスペース</a></li>
-                            <li><a href="pages/consulting.html">コンサルティング・運営代行</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#news">お知らせ</a></li>
+                    <li><a href="#services">サービス</a></li>
                     <li><a href="#about">会社概要</a></li>
+                    <li><a href="#news">お知らせ</a></li>
                     <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
+                
                 <div class="nav-toggle">
                     <span></span>
                     <span></span>
@@ -62,180 +54,193 @@
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>あなたが輝く、最高の<span class="text-accent">ステージ</span>を</h1>
-                    <h3>私たちは脇役。でも、主役を最高に輝かせる<span class="text-accent">ロックなサポーター</span>です。</h3>
-                    <p>株式会社オサラロックは、お客様が主役として最高に輝けるよう、レンタルスペース事業とコンサルティングでトータルサポートいたします。</p>
-                    <div class="hero-buttons">
-                        <a href="#services" class="btn btn-primary">事業内容を見る</a>
-                        <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero hero-with-bg-image">
+        <div class="container">
+            <div class="hero-content">
+                <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; background: none !important; -webkit-background-clip: unset !important; -webkit-text-fill-color: #ffffff !important; background-clip: unset !important;">あなたが輝く<br>最高のステージを</h1>
+                <h2 class="hero-subtitle">私たちは脇役。でも、主役を最高に輝かせる<br><strong class="hero-accent">ロックなサポーター</strong>です。</h2>
+                <p>レンタルスペース事業とコンサルティングで<br>お客様の成功を全力でサポートいたします。</p>
+                
+                <div class="cta-group">
+                    <a href="#services" class="btn btn-primary">
+                        サービス詳細
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        お問い合わせ
+                        <span>✉</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="services-header">
+                <h2>私たちのサービス</h2>
+                <p>お客様が主役として最高に輝ける。<br>2つの事業を運営しています。</p>
+            </div>
+            
+            <div class="services-grid">
+                <a href="pages/studios.html" class="service-card service-card-studios">
+                    <h3>レンタルスペース事業</h3>
+                    <p>『楽しかった』『おもしろかった』『頑張れた！』『使ってよかった』ご利用のみなさまに、そう思っていただけるスペースを運営しています。最高の思い出の1ページになるスペースを提供することをお約束します！</p>
+                </a>
+                
+                <a href="pages/consulting.html" class="service-card service-card-consulting">
+                    <h3>コンサルティング事業</h3>
+                    <p>レンタルスタジオ（ダンス、撮影）、レンタルスペース（ビジネス、パーティ）、貸し会議室の出店や集客方法のコンサルティングを行っています。また、4年間、17店舗の自店舗の運営経験をもとに、運営代行も行っております。</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section id="about" class="company-info section section-alt">
+        <div class="container">
+            <div class="company-content-new">
+                <div class="company-logo-top">
+                    <img src="images/logo2.png" alt="株式会社オサラロック">
+                </div>
+                
+                <h2>会社概要</h2>
+                <p>株式会社オサラロックは、<br>『お客様が主役として最高に輝けるステージ』を提供します。<br>脇役に徹し、レンタルスペース事業と<br>コンサルティング事業を通じて、<br>お客様の成功を全力でサポートいたします。<br>4年間で17店舗の運営経験を活かし、<br>困っている人、頑張る人の最高の受け皿となります。</p>
+                
+                <div class="company-stats-single-row">
+                    <div class="stat-item stat-stores">
+                        <span class="stat-number">17</span>
+                        <div class="stat-label">直営店舗数</div>
+                    </div>
+                    <div class="stat-item stat-years">
+                        <span class="stat-number">4</span>
+                        <div class="stat-label">運営年数</div>
+                    </div>
+                    <div class="stat-item stat-founding">
+                        <span class="stat-number">2021</span>
+                        <div class="stat-label">創業年</div>
+                    </div>
+                    <div class="stat-item stat-incorporation">
+                        <span class="stat-number">2024</span>
+                        <div class="stat-label">法人設立年</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2>事業内容</h2>
-                <div class="services-list">
-                    <a href="pages/studios.html" class="service-item">
-                        <div class="service-number">01</div>
-                        <div class="service-content">
-                            <h3>レンタルスタジオ・レンタルスペース事業</h3>
-                            <p>『楽しかった♪』『おもしろかった(^^)』『頑張れた！』『使ってよかった☆』ご利用のみなさまに、そう思っていただけるスペースを運営しています。最高の思い出の1ページになるスペースを提供することをお約束します！</p>
-                        </div>
-                    </a>
-                    <a href="pages/consulting.html" class="service-item">
-                        <div class="service-number">02</div>
-                        <div class="service-content">
-                            <h3>コンサルティング・運営代行</h3>
-                            <p>レンタルスタジオ（ダンス、撮影）、レンタルスペース（ビジネス、パーティ）、貸し会議室の出店や集客方法のコンサルティングを行っています。また、4年間、17店舗の自店舗の運営経験をもとに、運営代行も行っております。</p>
-                        </div>
-                    </a>
-                </div>
+    <!-- News Section -->
+    <section id="news" class="news section">
+        <div class="container">
+            <div class="news-header">
+                <h2>お知らせ</h2>
+                <p>最新のニュースや重要なお知らせをお届けします。</p>
             </div>
-        </section>
-
-        <section id="news" class="news">
-            <div class="container">
-                <h2>News お知らせ</h2>
-                <div class="news-grid">
-                    <div class="news-item">
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-content">
                         <div class="news-meta">
                             <span class="news-date">2024/11/22</span>
-                            <span class="news-category important">重要</span>
+                            <span class="news-badge">重要</span>
                         </div>
                         <h3 class="news-title">株式会社オサラロック設立のお知らせ</h3>
                     </div>
                 </div>
-                <div class="news-more">
-                    <a href="pages/news.html" class="btn btn-secondary">お知らせ一覧</a>
-                </div>
+                
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>会社概要</h2>
-                        <p>株式会社オサラロックは、『お客様が主役として最高に輝けるステージ』を提供する企業です。</p>
-                        <p>私たちは脇役に徹し、レンタルスタジオ・レンタルスペース事業とコンサルティング・運営代行事業を通じて、お客様の成功を全力でサポートいたします。『楽しかった♪』『使ってよかった☆』そんな笑顔と感動を生み出すことが、私たちの最大の喜びです。</p>
-                        <p>4年間で18店舗の運営経験を活かし、困っている人、頑張る人の最高の受け皿となります。</p>
-                        <div class="company-info">
-                            <div class="info-item">
-                                <h4>創業・設立</h4>
-                                <p>創業：2021年3月<br>会社設立：2024年11月</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>お問い合わせ</h2>
+                    <p>お気軽にご相談ください。<br>専門スタッフが丁寧にお答えいたします。</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <div><strong>代表電話番号</strong></div>
+                                <div>070-1327-6907</div>
                             </div>
-                            <div class="info-item">
-                                <h4>直営店舗数</h4>
-                                <p>17店舗</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <div><strong>メールアドレス</strong></div>
+                                <div>support@osara-rock.com</div>
                             </div>
-                            <div class="info-item">
-                                <h4>本店所在地</h4>
-                                <p>埼玉県さいたま市</p>
-                            </div>
-                            <div class="info-item">
-                                <h4>代表者</h4>
-                                <p>菊田 大介</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div><strong>本店住所</strong></div>
+                                <div>埼玉県さいたま市中央区下落合1088-3</div>
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <img src="images/logo2.png" alt="株式会社オサラロック" class="company-image">
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>お問い合わせ</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>お気軽にお問い合わせください</h3>
-                        <p>お問い合わせ・ご相談は以下のフォームよりお問い合わせください。</p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <strong>電話番号</strong>
-                                <p>070-1327-6907（担当：川崎）</p>
-                            </div>
-                            <div class="contact-item">
-                                <strong>メール</strong>
-                                <p>support@osara-rock.com</p>
-                            </div>
-                        </div>
+                
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-group">
+                        <label for="name">お名前 *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">お名前 *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">会社名</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">メールアドレス *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">件名</label>
-                            <select id="subject" name="subject">
-                                <option value="">選択してください</option>
-                                <option value="service">サービスについて</option>
-                                <option value="estimate">お見積もり</option>
-                                <option value="support">サポート</option>
-                                <option value="other">その他</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">お問い合わせ内容 *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">送信する</button>
-                    </form>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">お問い合わせ種別</label>
+                        <select id="subject" name="subject">
+                            <option value="">選択してください</option>
+                            <option value="service">サービスについて</option>
+                            <option value="estimate">お見積もり</option>
+                            <option value="support">サポート</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        送信する
+                        <span>→</span>
+                    </button>
+                </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>株式会社オサラロック</h3>
-                    <p>あなたが主役として最高に輝けるステージを提供します。</p>
-                </div>
-                <div class="footer-section">
-                    <h4>事業内容</h4>
-                    <ul>
-                        <li><a href="pages/services.html">レンタルスタジオ・レンタルスペース事業</a></li>
-                        <li><a href="pages/services.html">コンサルティング・運営代行事業</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>会社情報</h4>
-                    <ul>
-                        <li><a href="pages/about.html">会社概要</a></li>
-                        <li><a href="pages/contact.html">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>お問い合わせ</h4>
-                    <p>✉️ support@osara-rock.com</p>
-                    <p>📍 埼玉県さいたま市</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 株式会社オサラロック. All rights reserved.</p>
-            </div>
+            <p>&copy; 2024 株式会社オサラロック. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/script.js"></script>
 </body>
 </html>

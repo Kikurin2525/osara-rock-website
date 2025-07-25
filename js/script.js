@@ -126,6 +126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact form handling
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
+    const consultingForm = document.querySelector('.consulting-contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -158,14 +159,59 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isValid) {
-                // Show success message
-                showMessage('お問い合わせありがとうございます。内容を確認の上、ご連絡いたします。', 'success');
+                // Netlify Forms handles the submission automatically
+                // We just show success message and let the form submit naturally
+                showMessage('お問い合わせを送信しています...', 'info');
                 
-                // Reset form
-                this.reset();
+                // The form will submit naturally to Netlify
+                // After submission, user will be redirected to a thank you page or back to form
+                setTimeout(() => {
+                    this.submit();
+                }, 1000);
+            } else {
+                showMessage('必須項目を正しく入力してください。', 'error');
+            }
+        });
+    }
+    
+    // Handle consulting form
+    if (consultingForm) {
+        consultingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validate required fields
+            const requiredFields = ['name', 'email', 'message'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = this.querySelector(`[name="${field}"]`);
+                if (!data[field] || data[field].trim() === '') {
+                    input.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = 'rgba(99, 102, 241, 0.2)';
+                }
+            });
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailField = this.querySelector('[name="email"]');
+            if (!emailRegex.test(data.email)) {
+                emailField.style.borderColor = '#e74c3c';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Netlify Forms handles the submission automatically
+                showMessage('お問い合わせを送信しています...', 'info');
                 
-                // In a real application, you would send the data to a server
-                console.log('Form data:', data);
+                setTimeout(() => {
+                    this.submit();
+                }, 1000);
             } else {
                 showMessage('必須項目を正しく入力してください。', 'error');
             }
@@ -200,6 +246,10 @@ function showMessage(message, type) {
         messageDiv.style.backgroundColor = '#f8d7da';
         messageDiv.style.color = '#721c24';
         messageDiv.style.border = '1px solid #f5c6cb';
+    } else if (type === 'info') {
+        messageDiv.style.backgroundColor = '#d1ecf1';
+        messageDiv.style.color = '#0c5460';
+        messageDiv.style.border = '1px solid #bee5eb';
     }
     
     // Insert message at the top of the form
