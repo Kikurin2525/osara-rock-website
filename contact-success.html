@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Forms for Netlify</title>
+</head>
+<body style="display: none;">
+    <!-- Hidden forms for Netlify detection -->
+    <form name="contact" netlify hidden>
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <select name="subject">
+            <option value="service">サービスについて</option>
+            <option value="estimate">お見積もり</option>
+            <option value="support">サポート</option>
+            <option value="other">その他</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
+    
+    <form name="consulting-contact" netlify hidden>
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <select name="subject">
+            <option value="service-inquiry">サービス詳細について</option>
+            <option value="consultation">無料相談の申込み</option>
+            <option value="estimate">お見積もり依頼</option>
+            <option value="other">その他</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
+</body>
+</html>

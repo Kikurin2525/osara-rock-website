@@ -130,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -158,27 +156,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
             
-            if (isValid) {
-                // Netlify Forms handles the submission automatically
-                // We just show success message and let the form submit naturally
-                showMessage('お問い合わせを送信しています...', 'info');
-                
-                // The form will submit naturally to Netlify
-                // After submission, user will be redirected to a thank you page or back to form
-                setTimeout(() => {
-                    this.submit();
-                }, 1000);
-            } else {
+            if (!isValid) {
+                e.preventDefault();
                 showMessage('必須項目を正しく入力してください。', 'error');
             }
+            // If valid, let the form submit naturally to Netlify
         });
     }
     
     // Handle consulting form
     if (consultingForm) {
         consultingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -205,16 +193,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
             
-            if (isValid) {
-                // Netlify Forms handles the submission automatically
-                showMessage('お問い合わせを送信しています...', 'info');
-                
-                setTimeout(() => {
-                    this.submit();
-                }, 1000);
-            } else {
+            if (!isValid) {
+                e.preventDefault();
                 showMessage('必須項目を正しく入力してください。', 'error');
             }
+            // If valid, let the form submit naturally to Netlify
         });
     }
 });

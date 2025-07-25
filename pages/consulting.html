@@ -43,8 +43,16 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">ホーム</a></li>
-                    <li><a href="studios.html">レンタルスペース事業</a></li>
-                    <li><a href="consulting.html">コンサルティング事業</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html#services" class="dropdown-toggle">サービス</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="studios.html">レンタルスペース事業</a></li>
+                            <li><a href="consulting.html">コンサルティング事業</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../index.html#about">会社概要</a></li>
+                    <li><a href="../index.html#news">お知らせ</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
                 <div class="nav-toggle">
                     <span></span>
@@ -76,7 +84,7 @@
                     <div style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-lg); margin-bottom: 2rem;">
                         <h3 style="color: var(--text-primary); font-weight: 700; margin-bottom: 1.5rem; font-size: 1.4rem;">お問い合わせはこちら</h3>
                         
-                        <form class="consulting-contact-form" name="consulting-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="text-align: left;">
+                        <form class="consulting-contact-form" name="consulting-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" style="text-align: left;">
                             <p style="display: none;">
                                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                             </p>
@@ -134,6 +142,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Hidden form for Netlify detection -->
+    <form name="consulting-contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <select name="subject">
+            <option value="service-inquiry">サービス詳細について</option>
+            <option value="consultation">無料相談の申込み</option>
+            <option value="estimate">お見積もり依頼</option>
+            <option value="other">その他</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
 
     <script src="../js/script.js"></script>
 </body>

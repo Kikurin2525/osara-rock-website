@@ -244,6 +244,73 @@ p {
     transition: all 0.3s ease;
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 220px;
+    z-index: 1000;
+    list-style: none;
+    padding: var(--space-sm) 0;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.dropdown-menu a:hover {
+    background: var(--gradient-primary);
+    color: var(--white);
+    transform: none;
+    box-shadow: none;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7rem;
+    margin-left: var(--space-xs);
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after,
+.dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
 /* Hero Section - Minimal overlay for maximum background visibility */
 .hero {
     min-height: 100vh;
@@ -1188,6 +1255,31 @@ p {
     
     .contact::before {
         background: rgba(10, 10, 15, 0.8);
+    }
+    
+    /* Mobile dropdown adjustments */
+    .dropdown-menu {
+        position: static;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: auto;
+        backdrop-filter: none;
+        padding: 0;
+        margin-left: var(--space-lg);
+    }
+    
+    .dropdown-menu a {
+        padding: var(--space-xs) var(--space-md);
+        font-size: 0.85rem;
+    }
+    
+    .dropdown-toggle::after {
+        display: none;
     }
 }
 }
