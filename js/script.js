@@ -1,18 +1,42 @@
-// Mobile Navigation Toggle
+// Enhanced Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
+    // Toggle mobile menu
     navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        body.classList.toggle('menu-open');
     });
     
     // Close menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
         });
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+    
+    // Prevent scrolling when menu is open
+    const style = document.createElement('style');
+    style.textContent = `
+        .menu-open {
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(style);
 });
 
 // Dropdown Menu Functionality
@@ -109,15 +133,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Smooth scrolling for navigation links
+// Enhanced Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Close mobile menu if open
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            const body = document.body;
+            
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+            
+            // Smooth scroll to target
+            const headerHeight = 80;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -302,21 +343,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add loading state to form submit button
+// Enhanced loading state for form submit buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const submitButton = document.querySelector('.contact-form button[type="submit"]');
-    const form = document.querySelector('.contact-form');
+    const forms = document.querySelectorAll('.contact-form, .consulting-contact-form');
     
-    if (form && submitButton) {
-        form.addEventListener('submit', function() {
-            submitButton.textContent = '送信中...';
-            submitButton.disabled = true;
-            
-            // Re-enable button after 3 seconds
-            setTimeout(() => {
-                submitButton.textContent = '送信する';
-                submitButton.disabled = false;
-            }, 3000);
-        });
-    }
+    forms.forEach(form => {
+        const submitButton = form.querySelector('button[type="submit"]');
+        
+        if (submitButton) {
+            form.addEventListener('submit', function(e) {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Quick validation check
+                const requiredFields = ['name', 'email', 'message'];
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!data[field] || data[field].trim() === '') {
+                        isValid = false;
+                    }
+                });
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    const originalText = submitButton.innerHTML;
+                    submitButton.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid white; border-radius: 50%; animation: spin 1s linear infinite;"></span>送信中...</span>';
+                    submitButton.disabled = true;
+                    
+                    // Add spinner animation
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes spin {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+                    `;
+                    if (!document.querySelector('style[data-spinner]')) {
+                        style.setAttribute('data-spinner', 'true');
+                        document.head.appendChild(style);
+                    }
+                    
+                    // Reset button after timeout (fallback)
+                    setTimeout(() => {
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                    }, 10000);
+                }
+            });
+        }
+    });
 });
