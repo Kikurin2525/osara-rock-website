@@ -15,20 +15,20 @@
     <meta property="og:image" content="https://osara-rock.com/images/ogp-image.jpg">
     
     <!-- Favicons - 全ブラウザ・デバイス対応 -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/images/osara.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/osara.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/osara.png">
     
     <!-- Apple Touch Icons - iOS対応 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/osara.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/osara.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/osara.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/osara.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/osara.png">
     
     <!-- Android Chrome Icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/osara.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/osara.png">
     
     <!-- Web App Manifest - PWA対応 -->
     <link rel="manifest" href="/site.webmanifest">
@@ -58,8 +58,9 @@
             
             <ul class="nav-menu">
                 <li><a href="#home">HOME</a></li>
-                <li><a href="pages/studios.html">STUDIOS</a></li>
+                <li><a href="pages/studios.html">SPACES</a></li>
                 <li><a href="pages/consulting.html">CONSULTING</a></li>
+                <li><a href="pages/news.html">NEWS</a></li>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
@@ -74,6 +75,11 @@
 
     <!-- 🔥 MEGA IMPACT HERO 🔥 -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Performer on Stage" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
         <!-- CRAZY VIBE TEXT LIKE IKEHAYA -->
         <div class="vibe-text" style="--rotate: -15deg;">OSARA</div>
         <div class="vibe-text" style="--rotate: 15deg;">ROCK</div>
@@ -85,7 +91,7 @@
             
             <div class="cta-group">
                 <a href="pages/studios.html" class="btn-mega btn-primary">
-                    STUDIOS
+                    SPACES
                 </a>
                 <a href="pages/consulting.html" class="btn-mega btn-secondary">
                     CONSULTING
@@ -95,170 +101,453 @@
     </section>
 
     <!-- 🔥 BRUTAL SERVICES SECTION 🔥 -->
-    <section id="services" class="section">
+    <section id="services" class="section" style="position: relative;">
         <div class="container">
             <h2 class="section-title">SERVICES</h2>
             
-            <div class="services-grid">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 2rem 0;">
                 <div class="service-card fade-in">
-                    <h3>RENTAL SPACES</h3>
-                    <p>『楽しかった』『おもしろかった』『頑張れた！』<br>ご利用のみなさまに、そう思っていただけるスペースを<strong>17店舗</strong>で運営。</p>
-                    <a href="pages/studios.html" class="btn-mega btn-primary" style="margin-top: 2rem;">
-                        VIEW STUDIOS
-                    </a>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fun Party Celebration" class="service-img">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <img src="https://icooon-mono.com/i/icon_11672/icon_116720_256.png" alt="Building Icon" class="mono-icon">
+                        </div>
+                        <h3>RENTAL SPACES</h3>
+                        <p>『楽しかった』『おもしろかった』『頑張れた！』<br>ご利用のみなさまに、そう思っていただけるスペースを<strong>17店舗</strong>で運営。</p>
+                        <a href="pages/studios.html" class="btn-mega btn-primary" style="margin-top: 2rem;">
+                            VIEW SPACES
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <h3>CONSULTING</h3>
-                    <p><strong>4年間の実戦経験</strong>で、レンタルスペース事業の立ち上げから運営までをトータルサポート。</p>
-                    <a href="pages/consulting.html" class="btn-mega btn-secondary" style="margin-top: 2rem;">
-                        LEARN MORE
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Business Consulting" class="service-img">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <img src="https://icooon-mono.com/i/icon_11094/icon_110940_256.png" alt="Growth Chart Icon" class="mono-icon">
+                        </div>
+                        <h3>CONSULTING</h3>
+                        <p><strong>4年間の実戦経験</strong>で、レンタルスペース事業の立ち上げから運営までをトータルサポート。</p>
+                        <a href="pages/consulting.html" class="btn-mega btn-secondary" style="margin-top: 2rem;">
+                            LEARN MORE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 🔥 SPACES SHOWCASE SLIDER 🔥 -->
+    <section id="spaces-showcase" class="spaces-slider section">
+        <div class="section-background">
+            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Space Background" class="section-bg-image">
+            <div class="section-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="slider-cyber-frame">
+                <div class="cyber-header">
+                    <h2 class="glitch" data-text="OUR SPACES">OUR SPACES</h2>
+                    <div class="cyber-line"></div>
+                </div>
+                <p class="slider-subtitle">全国<strong>17店舗</strong>で展開中！あなたの<strong>『やりたい』</strong>を叶える空間がここに。</p>
+                
+                <div class="spaces-slider-container">
+                    <div class="spaces-slider-track" id="spacesSliderTrack">
+                        <!-- Slide 1: 早稲田 -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/waseda.webp" alt="レンタルスタジオDAYS 早稲田店内の様子" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>レンタルスタジオDAYS</h3>
+                                <p class="space-type">早稲田店</p>
+                                <p class="space-description">ダンス・音楽活動に最適な本格スタジオ</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: ポケット -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/pocket.webp" alt="ポケット" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>ポケット</h3>
+                                <p class="space-type">パーティスペース</p>
+                                <p class="space-description">アットホームな雰囲気で特別な時間を演出</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: 千歳烏山 -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/chitosekarasuyama.webp" alt="レンタルスタジオDAYS 千歳烏山店内の様子" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>レンタルスタジオDAYS</h3>
+                                <p class="space-type">千歳烏山店</p>
+                                <p class="space-description">広々とした空間でのびのび練習</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4: 川口301 -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/kawaguti301.webp" alt="川口301号室" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>川口駅前とらのワークスペース</h3>
+                                <p class="space-type">301号室</p>
+                                <p class="space-description">集中して作業に取り組める環境</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5: レイズ -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/rays.webp" alt="レイズ店内の様子" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>レイズ</h3>
+                                <p class="space-type">多目的スペース</p>
+                                <p class="space-description">ゲーム・デートなどまったり使用に最適</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 6: コットン -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/cotton.webp" alt="コットン店内の様子" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>コットン</h3>
+                                <p class="space-type">コミュニティスペース</p>
+                                <p class="space-description">温かな雰囲気の交流空間</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 7: 関内 -->
+                        <div class="space-slide">
+                            <div class="space-slide-image">
+                                <img src="images/yokohamakannai.webp" alt="レンタルスタジオDAYS 関内店内の様子" class="slide-img">
+                                <div class="space-slide-overlay"></div>
+                            </div>
+                            <div class="space-slide-content">
+                                <h3>レンタルスタジオDAYS</h3>
+                                <p class="space-type">関内店</p>
+                                <p class="space-description">横浜エリアの本格ダンススタジオ</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                        <span class="indicator" data-slide="5"></span>
+                        <span class="indicator" data-slide="6"></span>
+                    </div>
+                </div>
+                
+                <div class="slider-cta">
+                    <a href="pages/studios.html" class="btn-mega btn-primary">
+                        全17店舗を見る
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Company Info Section -->
+    <!-- 🔥 COMPANY INFO - CYBER STYLE 🔥 -->
     <section id="about" class="company-info section section-alt">
+        <div class="section-background">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Modern Office" class="section-bg-image">
+            <div class="section-overlay"></div>
+        </div>
         <div class="container">
-            <div class="company-content-new">
-                <div class="company-logo-top">
-                    <img src="images/logo2.png" alt="株式会社オサラロック">
+            <div class="company-cyber-frame">
+                <div class="cyber-header">
+                    <h2 class="glitch" data-text="COMPANY INFO">COMPANY INFO</h2>
+                    <div class="cyber-line"></div>
                 </div>
                 
-                <h2>会社概要</h2>
-                <p>株式会社オサラロックは、<br>『お客様が主役として最高に輝けるステージ』を提供します。<br>脇役に徹し、レンタルスペース事業と<br>コンサルティング事業を通じて、<br>お客様の成功を全力でサポートいたします。<br>4年間で17店舗の運営経験を活かし、<br>困っている人、頑張る人の最高の受け皿となります。</p>
+                <div class="company-content-cyber">
+                    <div class="company-logo-enhanced">
+                        <div class="logo-glow-ring"></div>
+                        <img src="images/osara.png" alt="株式会社オサラロック" style="width: 200px; height: 200px; object-fit: contain;">
+                        <div class="logo-particles"></div>
+                    </div>
+                    
+                    <div class="company-description">
+                        <h3>株式会社オサラロック</h3>
+                        <div class="description-text">
+                            <p>『<strong>お客様が主役として最高に輝けるステージ</strong>』を提供します。</p>
+                            <p>脇役に徹し、レンタルスペース事業とコンサルティング事業を通じて、<br>お客様の成功を<strong>全力でサポート</strong>いたします。</p>
+                            <p><strong>4年間で17店舗</strong>の運営経験を活かし、<br>困っている人、頑張る人の<strong>最高の受け皿</strong>となります。</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="company-stats-single-row">
-                    <div class="stat-item stat-stores">
-                        <span class="stat-number">17</span>
-                        <div class="stat-label">直営店舗数</div>
-                    </div>
-                    <div class="stat-item stat-years">
-                        <span class="stat-number">4</span>
-                        <div class="stat-label">運営年数</div>
-                    </div>
-                    <div class="stat-item stat-founding">
-                        <span class="stat-number">2021</span>
-                        <div class="stat-label">創業年</div>
-                    </div>
-                    <div class="stat-item stat-incorporation">
-                        <span class="stat-number">2024</span>
-                        <div class="stat-label">法人設立年</div>
+                <div class="horizontal-scroll-container">
+                    <div class="company-stats-cyber horizontal">
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_11672/icon_116720_256.png" alt="Buildings" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">17</div>
+                            <div class="stat-label-cyber">直営店舗数</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_12573/icon_125730_256.png" alt="Clock" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">4</div>
+                            <div class="stat-label-cyber">運営年数</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_10544/icon_105440_256.png" alt="Calendar" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">2021</div>
+                            <div class="stat-label-cyber">創業年</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_11050/icon_110500_256.png" alt="Award" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">2024</div>
+                            <div class="stat-label-cyber">法人設立年</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_11672/icon_116720_256.png" alt="Locations" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">5</div>
+                            <div class="stat-label-cyber">主要エリア</div>
+                            <div class="stat-glow"></div>
+                        </div>
+                        <div class="stat-card-cyber">
+                            <div class="stat-icon">
+                                <img src="https://icooon-mono.com/i/icon_11094/icon_110940_256.png" alt="Growth" class="mono-icon-stat">
+                            </div>
+                            <div class="stat-number-cyber">100+</div>
+                            <div class="stat-label-cyber">月間利用者</div>
+                            <div class="stat-glow"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- News Section -->
+    <!-- 🔥 NEWS SECTION - CYBER FRAMES 🔥 -->
     <section id="news" class="news section">
+        <div class="section-background">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="News Background" class="section-bg-image">
+            <div class="section-overlay"></div>
+        </div>
         <div class="container">
-            <div class="news-header">
-                <h2>お知らせ</h2>
-                <p>最新のニュースや重要なお知らせをお届けします。</p>
-            </div>
-            
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date">2024/11/22</span>
-                            <span class="news-badge">重要</span>
+            <div class="news-cyber-frame">
+                <div class="cyber-header">
+                    <h2 class="glitch" data-text="NEWS & UPDATES">NEWS & UPDATES</h2>
+                    <div class="cyber-line"></div>
+                </div>
+                <p class="news-subtitle">最新のニュースや重要なお知らせを<strong>リアルタイム</strong>でお届け</p>
+                
+                <div class="horizontal-scroll-container">
+                    <div class="news-grid-cyber horizontal">
+                        <div class="news-card-cyber mega-impact">
+                            <div class="news-frame-border"></div>
+                            <div class="news-content-cyber">
+                                <div class="news-meta-cyber">
+                                    <span class="news-date-cyber">2025/2/1</span>
+                                    <span class="news-badge-cyber update">🎯 OPEN</span>
+                                </div>
+                                <h3 class="news-title-cyber" style="font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.4;">スタジオDAYS<br>早稲田店オープン</h3>
+                                <div class="news-glow-effect"></div>
+                            </div>
                         </div>
-                        <h3 class="news-title">株式会社オサラロック設立のお知らせ</h3>
+                        
+                        <div class="news-card-cyber mega-impact">
+                            <div class="news-frame-border"></div>
+                            <div class="news-content-cyber">
+                                <div class="news-meta-cyber">
+                                    <span class="news-date-cyber">2025/1/29</span>
+                                    <span class="news-badge-cyber new">🎉 OPEN</span>
+                                </div>
+                                <h3 class="news-title-cyber" style="font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.4;">レンタルスペース<br>「ピース」オープン</h3>
+                                <div class="news-glow-effect"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-card-cyber mega-impact">
+                            <div class="news-frame-border"></div>
+                            <div class="news-content-cyber">
+                                <div class="news-meta-cyber">
+                                    <span class="news-date-cyber">2024/11/22</span>
+                                    <span class="news-badge-cyber important">🔥 重要</span>
+                                </div>
+                                <h3 class="news-title-cyber" style="font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.4;">株式会社オサラロック設立</h3>
+                                <div class="news-glow-effect"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 🔥 CONTACT SECTION - CYBER COMMAND CENTER 🔥 -->
     <section id="contact" class="contact section">
+        <div class="section-background">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Contact Background" class="section-bg-image">
+            <div class="section-overlay"></div>
+        </div>
         <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>お問い合わせ</h2>
-                    <p>お気軽にご相談ください。<br>専門スタッフが丁寧にお答えいたします。</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <div><strong>代表電話番号</strong></div>
-                                <div>070-1327-6907</div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <div><strong>メールアドレス</strong></div>
-                                <div>support@osara-rock.com</div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <div><strong>本店住所</strong></div>
-                                <div>埼玉県さいたま市中央区下落合1088-3</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contact-cyber-frame">
+                <div class="cyber-header">
+                    <h2 class="glitch" data-text="CONTACT US">CONTACT US</h2>
+                    <div class="cyber-line"></div>
                 </div>
+                <p class="contact-subtitle">お気軽にご相談ください。<strong>スタッフ</strong>が丁寧にお答えいたします。</p>
                 
-                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-                    <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-                    <input type="hidden" name="subject" value="【重要】ホームページからお問い合わせ">
-                    <div class="form-group">
-                        <label for="name">お名前 *</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="contact-container-cyber">
+                    <div class="contact-info-cyber">
+                        <div class="contact-details-cyber">
+                            <div class="contact-item-cyber">
+                                <div class="contact-icon-cyber">
+                                    <img src="https://icooon-mono.com/i/icon_12410/icon_124100_256.png" alt="Check" class="mono-icon-contact">
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">代表電話番号</div>
+                                    <div class="contact-value">070-1327-6907</div>
+                                </div>
+                                <div class="contact-glow"></div>
+                            </div>
+                            
+                            <div class="contact-item-cyber">
+                                <div class="contact-icon-cyber">
+                                    <img src="https://icooon-mono.com/i/icon_12410/icon_124100_256.png" alt="Check" class="mono-icon-contact">
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">メールアドレス</div>
+                                    <div class="contact-value">support@osara-rock.com</div>
+                                </div>
+                                <div class="contact-glow"></div>
+                            </div>
+                            
+                            <div class="contact-item-cyber">
+                                <div class="contact-icon-cyber">
+                                    <img src="https://icooon-mono.com/i/icon_12410/icon_124100_256.png" alt="Check" class="mono-icon-contact">
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">本店住所</div>
+                                    <div class="contact-value">埼玉県さいたま市中央区下落合1088-3</div>
+                                </div>
+                                <div class="contact-glow"></div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="company">会社名</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">メールアドレス *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="inquiry-type">お問い合わせ種別</label>
-                        <select id="inquiry-type" name="inquiry-type">
-                            <option value="">選択してください</option>
-                            <option value="service">サービスについて</option>
-                            <option value="estimate">お見積もり</option>
-                            <option value="support">サポート</option>
-                            <option value="other">その他</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">お問い合わせ内容 *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        送信する
-                        <span>→</span>
-                    </button>
-                </form>
+                    <form class="contact-form-cyber" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+                        <div class="form-cyber-border"></div>
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <input type="hidden" name="subject" value="【重要】ホームページからお問い合わせ">
+                        
+                        <div class="form-group-cyber">
+                            <label for="name" class="form-label-cyber">お名前 *</label>
+                            <input type="text" id="name" name="name" class="form-input-cyber" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group-cyber">
+                            <label for="company" class="form-label-cyber">会社名</label>
+                            <input type="text" id="company" name="company" class="form-input-cyber">
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group-cyber">
+                            <label for="email" class="form-label-cyber">メールアドレス *</label>
+                            <input type="email" id="email" name="email" class="form-input-cyber" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group-cyber">
+                            <label for="inquiry-type" class="form-label-cyber">お問い合わせ種別</label>
+                            <select id="inquiry-type" name="inquiry-type" class="form-select-cyber">
+                                <option value="">選択してください</option>
+                                <option value="service">サービスについて</option>
+                                <option value="estimate">お見積もり</option>
+                                <option value="support">サポート</option>
+                                <option value="other">その他</option>
+                            </select>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group-cyber">
+                            <label for="message" class="form-label-cyber">お問い合わせ内容 *</label>
+                            <textarea id="message" name="message" rows="5" class="form-textarea-cyber" required></textarea>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn-cyber-submit">
+                            <span class="btn-text">送信する</span>
+                            <span class="btn-arrow">→</span>
+                            <div class="btn-particles"></div>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 🔥 FOOTER - CYBER STYLE 🔥 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 株式会社オサラロック. All rights reserved.</p>
+            <!-- ホームボタンを枠の上に配置 -->
+            <div class="footer-home-container" style="text-align: center; margin-bottom: 2rem;">
+                <a href="index.html" class="footer-home-btn" style="background: linear-gradient(45deg, #8b5cf6, #00ffff); color: #ffffff; text-decoration: none; padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); transition: all 0.3s ease; backdrop-filter: blur(10px); box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3); display: inline-block;">
+                    🏠 ホームに戻る
+                </a>
+            </div>
+            
+            <div class="footer-cyber-frame">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="images/osara.png" alt="OSARA ROCK" class="footer-logo-img">
+                        <div class="footer-brand">OSARA ROCK</div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="copyright-glow">&copy; 2024 株式会社オサラロック</div>
+                        <div class="rights-text">All rights reserved.</div>
+                        <div class="privacy-link" style="margin-top: 0.5rem;">
+                            <a href="pages/privacy.html" style="color: #8b5cf6; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: all 0.3s ease;">個人情報のお取り扱いについて</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-border-glow"></div>
+            </div>
         </div>
     </footer>
 

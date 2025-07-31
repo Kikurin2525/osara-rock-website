@@ -22,20 +22,20 @@
     <meta name="twitter:image" content="https://osara-rock.com/images/ogp-image.jpg">
     
     <!-- Favicons - 全ブラウザ・デバイス対応 -->
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" href="../images/osara.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/osara.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/osara.png">
     
     <!-- Apple Touch Icons - iOS対応 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/osara.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/osara.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/osara.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/osara.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/osara.png">
     
     <!-- Android Chrome Icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/osara.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/osara.png">
     
     <!-- Web App Manifest - PWA対応 -->
     <link rel="manifest" href="../site.webmanifest">
@@ -63,8 +63,9 @@
             
             <ul class="nav-menu">
                 <li><a href="../index.html">HOME</a></li>
-                <li><a href="studios.html">STUDIOS</a></li>
+                <li><a href="studios.html">SPACES</a></li>
                 <li><a href="consulting.html">CONSULTING</a></li>
+                <li><a href="news.html">NEWS</a></li>
                 <li><a href="../index.html#about">ABOUT</a></li>
                 <li><a href="../index.html#contact">CONTACT</a></li>
             </ul>
@@ -78,7 +79,11 @@
     </header>
 
     <main style="padding-top: 80px;">
-        <section class="hero" style="padding: 60px 0; background: transparent; min-height: 40vh;">
+        <section class="hero" style="padding: 60px 0; background: transparent; min-height: 40vh; position: relative;">
+            <div class="hero-background">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Multiple Studio Spaces" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <h2 style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-weight: 700; font-family: 'M PLUS 1p', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3rem); text-align: center; line-height: 1.3; margin-bottom: 1.5rem;">直営店舗一覧</h2>
@@ -101,7 +106,8 @@
                 <div class="studios-grid">
                     
                     <!-- レンタルスタジオDAYS 早稲田店 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/waseda.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>レンタルスタジオDAYS 早稲田店</h3>
                             <span class="studio-type dance">ダンススタジオ</span>
@@ -123,7 +129,8 @@
                     </div>
 
                     <!-- レンタルスタジオDAYS 千歳烏山店 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/chitosekarasuyama.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>レンタルスタジオDAYS 千歳烏山店</h3>
                             <span class="studio-type dance">ダンススタジオ</span>
@@ -145,7 +152,8 @@
                     </div>
 
                     <!-- レンタルスタジオDAYS 横浜関内店 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/yokohamakannai.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>レンタルスタジオDAYS 横浜関内店</h3>
                             <span class="studio-type dance">ダンススタジオ</span>
@@ -193,7 +201,8 @@
                     </div>
 
                     <!-- レンタルスタジオDAYS 与野店 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/yono.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>レンタルスタジオDAYS 与野店</h3>
                             <span class="studio-type dance">ダンススタジオ</span>
@@ -246,7 +255,8 @@
                 <div class="studios-grid">
                     
                     <!-- コットン -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/cotton.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>コットン</h3>
                             <span class="studio-type party">パーティスペース</span>
@@ -272,7 +282,8 @@
                     </div>
 
                     <!-- ポケット -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/pocket.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>ポケット</h3>
                             <span class="studio-type party">パーティスペース</span>
@@ -298,7 +309,8 @@
                     </div>
 
                     <!-- ピース -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/piece.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>ピース</h3>
                             <span class="studio-type party">パーティスペース</span>
@@ -320,7 +332,8 @@
                     </div>
 
                     <!-- レイズ -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/rays.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>レイズ</h3>
                             <span class="studio-type party">パーティスペース</span>
@@ -342,7 +355,8 @@
                     </div>
 
                     <!-- ナチュラ -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/natura.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>ナチュラ</h3>
                             <span class="studio-type party">パーティスペース</span>
@@ -381,7 +395,8 @@
                 <div class="studios-grid">
                     
                     <!-- 川口駅前とらのワークスペース 301号室 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/kawaguti301.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>川口駅前とらのワークスペース 301号室</h3>
                             <span class="studio-type work">ワークスペース</span>
@@ -407,7 +422,8 @@
                     </div>
 
                     <!-- 川口駅前とらのワークスペース 302号室 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/kawaguchi302.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>川口駅前とらのワークスペース 302号室</h3>
                             <span class="studio-type work">ワークスペース</span>
@@ -433,7 +449,8 @@
                     </div>
 
                     <!-- 川口駅前とらのワークスペース 303号室 -->
-                    <div class="studio-card">
+                    <div class="studio-card studio-card-with-bg" style="background-image: url('../images/kawaguchi303.webp');">
+                        <div class="studio-card-overlay"></div>
                         <div class="studio-header">
                             <h3>川口駅前とらのワークスペース 303号室</h3>
                             <span class="studio-type work">ワークスペース</span>
@@ -465,11 +482,31 @@
 
     </main>
 
+    <!-- 🔥 FOOTER - CYBER STYLE 🔥 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-simple">
-                <a href="../index.html" class="footer-top-link">トップページに戻る</a>
-                <p>&copy; 2024 株式会社オサラロック. All rights reserved.</p>
+            <!-- ホームボタンを枠の上に配置 -->
+            <div class="footer-home-container" style="text-align: center; margin-bottom: 2rem;">
+                <a href="../index.html" class="footer-home-btn" style="background: linear-gradient(45deg, #8b5cf6, #00ffff); color: #ffffff; text-decoration: none; padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); transition: all 0.3s ease; backdrop-filter: blur(10px); box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3); display: inline-block;">
+                    🏠 ホームに戻る
+                </a>
+            </div>
+            
+            <div class="footer-cyber-frame">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="../images/osara.png" alt="OSARA ROCK" class="footer-logo-img">
+                        <div class="footer-brand">OSARA ROCK</div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="copyright-glow">&copy; 2024 株式会社オサラロック</div>
+                        <div class="rights-text">All rights reserved.</div>
+                        <div class="privacy-link" style="margin-top: 0.5rem;">
+                            <a href="privacy.html" style="color: #8b5cf6; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: all 0.3s ease;">個人情報のお取り扱いについて</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-border-glow"></div>
             </div>
         </div>
     </footer>
