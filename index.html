@@ -46,80 +46,75 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ikehaya-style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- 🔥 CYBER HEADER 🔥 -->
     <header class="header">
         <nav class="nav">
-            <div class="container">
-                <a href="#home" class="nav-brand">
-                    <img src="images/osara.png" alt="OSARA ROCK Logo">
-                </a>
-                
-                <ul class="nav-menu">
-                    <li><a href="#home">ホーム</a></li>
-                    <li class="dropdown">
-                        <a href="#services" class="dropdown-toggle">サービス</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="pages/studios.html">レンタルスペース事業</a></li>
-                            <li><a href="pages/consulting.html">コンサルティング事業</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#about">会社概要</a></li>
-                    <li><a href="#news">お知らせ</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
-                </ul>
-                
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <a href="#home" class="nav-brand">
+                <img src="images/osara.png" alt="OSARA ROCK">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="pages/studios.html">STUDIOS</a></li>
+                <li><a href="pages/consulting.html">CONSULTING</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero hero-with-bg-image">
-        <div class="container">
-            <div class="hero-content">
-                <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; background: none !important; -webkit-background-clip: unset !important; -webkit-text-fill-color: #ffffff !important; background-clip: unset !important;">あなたが輝く<br>最高のステージを</h1>
-                <h2 class="hero-subtitle">私たちは脇役。でも、主役を最高に輝かせる<br><strong class="hero-accent">ロックなサポーター</strong>です。</h2>
-                <p>レンタルスペース事業とコンサルティングで<br>お客様の成功を全力でサポートいたします。</p>
-                
-                <div class="cta-group">
-                    <a href="#services" class="btn btn-primary">
-                        サービス詳細
-                        <span>→</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        お問い合わせ
-                        <span>✉</span>
-                    </a>
-                </div>
+    <!-- 🔥 MEGA IMPACT HERO 🔥 -->
+    <section id="home" class="hero">
+        <!-- CRAZY VIBE TEXT LIKE IKEHAYA -->
+        <div class="vibe-text" style="--rotate: -15deg;">OSARA</div>
+        <div class="vibe-text" style="--rotate: 15deg;">ROCK</div>
+        <div class="vibe-text" style="--rotate: -5deg;">STAGE</div>
+        
+        <div class="hero-content">
+            <h1 class="glitch" data-text="あなたが主役">あなたが主役</h1>
+            <p class="hero-subtitle">私たちは脇役でも、主役を最高に輝かせる<br><strong>ロックなサポーター</strong>です。</p>
+            
+            <div class="cta-group">
+                <a href="pages/studios.html" class="btn-mega btn-primary">
+                    STUDIOS
+                </a>
+                <a href="pages/consulting.html" class="btn-mega btn-secondary">
+                    CONSULTING
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
+    <!-- 🔥 BRUTAL SERVICES SECTION 🔥 -->
+    <section id="services" class="section">
         <div class="container">
-            <div class="services-header">
-                <h2>私たちのサービス</h2>
-                <p>お客様が主役として最高に輝ける。<br>2つの事業を運営しています。</p>
-            </div>
+            <h2 class="section-title">SERVICES</h2>
             
             <div class="services-grid">
-                <a href="pages/studios.html" class="service-card service-card-studios">
-                    <h3>レンタルスペース事業</h3>
-                    <p>『楽しかった』『おもしろかった』『頑張れた！』『使ってよかった』ご利用のみなさまに、そう思っていただけるスペースを運営しています。最高の思い出の1ページになるスペースを提供することをお約束します！</p>
-                </a>
+                <div class="service-card fade-in">
+                    <h3>RENTAL SPACES</h3>
+                    <p>『楽しかった』『おもしろかった』『頑張れた！』<br>ご利用のみなさまに、そう思っていただけるスペースを<strong>17店舗</strong>で運営。</p>
+                    <a href="pages/studios.html" class="btn-mega btn-primary" style="margin-top: 2rem;">
+                        VIEW STUDIOS
+                    </a>
+                </div>
                 
-                <a href="pages/consulting.html" class="service-card service-card-consulting">
-                    <h3>コンサルティング事業</h3>
-                    <p>レンタルスタジオ（ダンス、撮影）、レンタルスペース（ビジネス、パーティ）、貸し会議室の出店や集客方法のコンサルティングを行っています。また、4年間、17店舗の自店舗の運営経験をもとに、運営代行も行っております。</p>
-                </a>
+                <div class="service-card fade-in">
+                    <h3>CONSULTING</h3>
+                    <p><strong>4年間の実戦経験</strong>で、レンタルスペース事業の立ち上げから運営までをトータルサポート。</p>
+                    <a href="pages/consulting.html" class="btn-mega btn-secondary" style="margin-top: 2rem;">
+                        LEARN MORE
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -283,6 +278,6 @@
     </form>
 
     <!-- Scripts -->
-    <script src="js/script.js"></script>
+    <script src="js/ikehaya-impact.js"></script>
 </body>
 </html>
