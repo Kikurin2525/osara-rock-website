@@ -1,17 +1,17 @@
-/* 🔥 IKEHAYA INSPIRED MEGA IMPACT STYLE 🔥 */
+/* 🌟 HAPPY BRIGHT MEGA IMPACT STYLE 🌟 */
 
 /* ========== CORE VARIABLES ========== */
 :root {
-    /* MEGA IMPACT COLORS */
-    --dark-void: #000000;
-    --deep-space: #0a0a0a;
-    --electric-purple: #8b5cf6;
-    --neon-cyan: #00ffff;
-    --toxic-green: #39ff14;
-    --hot-pink: #ff1493;
-    --pure-white: #ffffff;
-    --danger-red: #ff0066;
-    --golden-yellow: #ffd700;
+    /* HAPPY BRIGHT COLORS */
+    --sunny-bg: #fef3c7;
+    --warm-white: #fffbeb;
+    --happy-orange: #fb923c;
+    --bright-blue: #3b82f6;
+    --cheerful-green: #10b981;
+    --lovely-pink: #ec4899;
+    --deep-text: #1f2937;
+    --soft-purple: #8b5cf6;
+    --golden-yellow: #fbbf24;
     
     /* TYPOGRAPHY */
     --font-impact: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
@@ -41,13 +41,14 @@
 
 body {
     font-family: var(--font-impact);
-    background: linear-gradient(135deg, var(--dark-void) 0%, var(--deep-space) 50%, #111 100%);
-    color: var(--pure-white);
+    background: linear-gradient(135deg, var(--sunny-bg) 0%, var(--warm-white) 50%, #fef7ed 100%);
+    color: var(--deep-text);
     overflow-x: hidden;
     position: relative;
+    line-height: 1.6;
 }
 
-/* CRAZY BACKGROUND ANIMATIONS */
+/* GENTLE HAPPY BACKGROUND ANIMATIONS */
 body::before {
     content: '';
     position: fixed;
@@ -56,22 +57,23 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
-    animation: backgroundShift 10s ease-in-out infinite alternate;
+        radial-gradient(circle at 20% 50%, rgba(251, 146, 60, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    animation: backgroundShift 15s ease-in-out infinite alternate;
     z-index: -2;
 }
 
 @keyframes backgroundShift {
-    0% { transform: scale(1) rotate(0deg); }
-    100% { transform: scale(1.1) rotate(2deg); }
+    0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    100% { transform: scale(1.05) rotate(1deg); opacity: 1; }
 }
 
-/* MEGA GLITCH EFFECT */
+/* HAPPY BOUNCE EFFECT */
 .glitch {
     position: relative;
     display: inline-block;
+    animation: happyBounce 3s ease-in-out infinite;
 }
 
 .glitch::before,
@@ -82,30 +84,38 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 .glitch::before {
-    animation: glitch-1 2s infinite;
-    color: var(--hot-pink);
+    animation: gentleGlow1 4s ease-in-out infinite;
+    color: var(--lovely-pink);
     z-index: -1;
+    opacity: 0.6;
 }
 
 .glitch::after {
-    animation: glitch-2 2s infinite;
-    color: var(--neon-cyan);
+    animation: gentleGlow2 4s ease-in-out infinite 1s;
+    color: var(--bright-blue);
     z-index: -2;
+    opacity: 0.4;
 }
 
-@keyframes glitch-1 {
-    0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
-    1%, 13% { transform: translate(-2px, 2px); }
-    16%, 48% { transform: translate(2px, -1px); }
+@keyframes happyBounce {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    25% { transform: translateY(-2px) scale(1.01); }
+    50% { transform: translateY(0px) scale(1); }
+    75% { transform: translateY(-1px) scale(1.005); }
 }
 
-@keyframes glitch-2 {
-    0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
-    1%, 19% { transform: translate(2px, -2px); }
-    22%, 61% { transform: translate(-1px, 2px); }
+@keyframes gentleGlow1 {
+    0%, 100% { transform: translate(0px, 0px); opacity: 0.6; }
+    50% { transform: translate(1px, -1px); opacity: 0.8; }
+}
+
+@keyframes gentleGlow2 {
+    0%, 100% { transform: translate(0px, 0px); opacity: 0.4; }
+    50% { transform: translate(-1px, 1px); opacity: 0.6; }
 }
 
 /* ========== HEADER - CYBER NAVIGATION ========== */
@@ -114,16 +124,17 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 2px solid var(--electric-purple);
+    border-bottom: 2px solid var(--happy-orange);
+    box-shadow: 0 4px 20px rgba(251, 146, 60, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: var(--glow-purple);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 25px rgba(251, 146, 60, 0.15);
 }
 
 .nav {
@@ -138,24 +149,22 @@ body::before {
 .nav-brand {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--pure-white);
+    color: var(--deep-text);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: -1px;
-    background: linear-gradient(45deg, var(--pure-white), var(--electric-purple), var(--neon-cyan));
+    background: linear-gradient(45deg, var(--happy-orange), var(--soft-purple), var(--bright-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
 }
 
 .nav-brand:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
-    text-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
 .nav-menu {
@@ -165,7 +174,7 @@ body::before {
 }
 
 .nav-menu a {
-    color: var(--pure-white);
+    color: var(--deep-text);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -182,13 +191,13 @@ body::before {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--electric-purple), var(--neon-cyan));
+    background: linear-gradient(90deg, var(--happy-orange), var(--bright-blue));
     transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: var(--electric-purple);
-    text-shadow: var(--glow-purple);
+    color: var(--happy-orange);
+    text-shadow: 0 2px 8px rgba(251, 146, 60, 0.3);
 }
 
 .nav-menu a:hover::after {
@@ -204,8 +213,8 @@ body::before {
     position: relative;
     padding: 0 2rem;
     background: 
-        linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.1) 50%, transparent 70%),
-        radial-gradient(circle at center, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
+        linear-gradient(45deg, transparent 30%, rgba(251, 146, 60, 0.08) 50%, transparent 70%),
+        radial-gradient(circle at center, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -248,13 +257,14 @@ body::before {
     position: absolute;
     font-size: clamp(8rem, 20vw, 20rem);
     font-weight: 900;
-    color: rgba(139, 92, 246, 0.03);
+    color: rgba(251, 146, 60, 0.08);
     text-transform: uppercase;
     letter-spacing: -5px;
     z-index: -1;
-    animation: vibeFloat 8s ease-in-out infinite alternate;
+    animation: vibeFloat 12s ease-in-out infinite alternate;
     user-select: none;
     pointer-events: none;
+    will-change: transform, opacity;
 }
 
 .vibe-text:nth-child(1) { top: 10%; left: -10%; transform: rotate(-15deg); }
@@ -262,8 +272,8 @@ body::before {
 .vibe-text:nth-child(3) { top: 30%; left: 30%; transform: rotate(-5deg); animation-delay: -4s; }
 
 @keyframes vibeFloat {
-    0% { transform: translateY(0) rotate(var(--rotate, 0deg)); opacity: 0.03; }
-    100% { transform: translateY(-20px) rotate(calc(var(--rotate, 0deg) + 5deg)); opacity: 0.08; }
+    0% { transform: translateY(0) rotate(var(--rotate, 0deg)); opacity: 0.08; }
+    100% { transform: translateY(-15px) rotate(calc(var(--rotate, 0deg) + 3deg)); opacity: 0.15; }
 }
 
 /* MEGA IMPACT BUTTONS */
@@ -284,15 +294,15 @@ body::before {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--electric-purple), var(--hot-pink));
-    color: var(--pure-white);
-    box-shadow: var(--shadow-brutal);
+    background: linear-gradient(45deg, var(--happy-orange), var(--lovely-pink));
+    color: var(--warm-white);
+    box-shadow: 0 8px 25px rgba(251, 146, 60, 0.3);
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, var(--neon-cyan), var(--toxic-green));
-    color: var(--dark-void);
-    box-shadow: var(--shadow-brutal);
+    background: linear-gradient(45deg, var(--bright-blue), var(--cheerful-green));
+    color: var(--warm-white);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
 .btn-mega::before {
@@ -1798,9 +1808,9 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
-    animation: footerGlow 8s ease-in-out infinite alternate;
+        radial-gradient(circle at 20% 20%, rgba(251, 146, 60, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+    animation: footerGlow 12s ease-in-out infinite alternate;
 }
 
 @keyframes footerGlow {
@@ -1809,8 +1819,8 @@ body::before {
 }
 
 .footer-cyber-frame {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0.8));
-    border: 2px solid var(--electric-purple);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 252, 232, 0.8));
+    border: 2px solid var(--happy-orange);
     border-radius: 20px;
     padding: 2rem;
     position: relative;
@@ -1826,10 +1836,10 @@ body::before {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, var(--electric-purple), var(--neon-cyan), var(--hot-pink));
+    background: linear-gradient(45deg, var(--happy-orange), var(--bright-blue), var(--lovely-pink));
     border-radius: 20px;
     z-index: -1;
-    animation: footerBorderPulse 3s ease-in-out infinite;
+    animation: footerBorderPulse 4s ease-in-out infinite;
 }
 
 @keyframes footerBorderPulse {
@@ -1866,8 +1876,8 @@ body::before {
 .footer-brand {
     font-size: 1.2rem;
     font-weight: 900;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    color: var(--deep-text);
+    text-shadow: 0 2px 8px rgba(251, 146, 60, 0.3);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1879,15 +1889,15 @@ body::before {
 .copyright-glow {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--golden-yellow);
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    color: var(--deep-text);
+    text-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
     margin-bottom: 0.3rem;
 }
 
 .rights-text {
     font-size: 0.9rem;
-    color: var(--pure-white);
-    opacity: 0.8;
+    color: var(--deep-text);
+    opacity: 0.7;
     font-weight: 400;
 }
 
@@ -2622,5 +2632,135 @@ body::before {
 @media (max-width: 768px) {
     .studio-card-with-bg {
         min-height: 350px;
+    }
+}
+
+/* ========== PERFORMANCE & MOBILE OPTIMIZATION ========== */
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .glitch,
+    .vibe-text,
+    body::before {
+        animation: none !important;
+    }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+    .btn-mega:hover,
+    .nav-menu a:hover {
+        transform: none;
+    }
+    
+    .btn-mega:active {
+        transform: scale(0.98);
+    }
+    
+    /* Improve touch target sizes */
+    .nav-menu a {
+        padding: 0.8rem 1rem;
+        margin: 0 0.2rem;
+    }
+    
+    .indicator {
+        width: 20px;
+        height: 20px;
+        margin: 0 8px;
+    }
+    
+    /* Better scroll behavior for horizontal sections */
+    .horizontal-scroll-container {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --deep-text: #000000;
+        --sunny-bg: #ffffff;
+        --happy-orange: #ff4500;
+        --bright-blue: #0000ff;
+    }
+    
+    .glitch::before,
+    .glitch::after {
+        opacity: 0.8;
+    }
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve image loading with aspect ratios */
+.hero-bg-image,
+.section-bg-image,
+.slide-img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: optimizeQuality;
+}
+
+/* Reduce layout shift */
+.service-img,
+.space-slide-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 768px) {
+    .nav-toggle {
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+        gap: 1.5rem;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .vibe-text {
+        font-size: clamp(4rem, 15vw, 8rem);
+        opacity: 0.1;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 4rem);
+    }
+    
+    /* Improve form usability on mobile */
+    .form-input-cyber,
+    .form-textarea-cyber,
+    .form-select-cyber {
+        font-size: 16px; /* Prevent zoom on iOS */
+        min-height: 44px; /* Better touch targets */
     }
 }

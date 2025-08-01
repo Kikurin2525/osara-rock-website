@@ -1,4 +1,4 @@
-/* 🔥 IKEHAYA INSPIRED MEGA IMPACT JAVASCRIPT 🔥 */
+/* 🌟 HAPPY BRIGHT OPTIMIZED JAVASCRIPT 🌟 */
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     goToSlide(index);
                     stopAutoSlide();
                     // Restart auto-slide after user interaction
-                    setTimeout(startAutoSlide, 5000);
+                    setTimeout(startAutoSlide, 3000);
                 });
             });
             
@@ -559,3 +559,121 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ========== PERFORMANCE & ACCESSIBILITY IMPROVEMENTS ==========
+
+// Respect user's motion preferences
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion) {
+    // Disable all animations if user prefers reduced motion
+    const reducedMotionStyle = document.createElement('style');
+    reducedMotionStyle.textContent = `
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    `;
+    document.head.appendChild(reducedMotionStyle);
+}
+
+// Debounce scroll events for better performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Intersection Observer for better performance on scroll animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe elements that need scroll-triggered animations
+document.querySelectorAll('.fade-in, .service-card, .news-card-cyber').forEach(el => {
+    observer.observe(el);
+});
+
+// Preload critical images
+function preloadImages() {
+    const criticalImages = [
+        'images/waseda.webp',
+        'images/pocket.webp',
+        'images/chitosekarasuyama.webp',
+        'images/osara.png'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
+}
+
+// Initialize preloading
+preloadImages();
+
+// Add touch event optimization for mobile
+if ('ontouchstart' in window) {
+    document.body.classList.add('touch-device');
+    
+    // Improve touch responsiveness
+    document.querySelectorAll('.btn-mega, .nav-menu a').forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.opacity = '0.8';
+        }, { passive: true });
+        
+        element.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.opacity = '';
+            }, 150);
+        }, { passive: true });
+    });
+}
+
+// Error handling for slider
+window.addEventListener('error', function(e) {
+    console.warn('Error caught:', e.error);
+    // Gracefully handle errors without breaking the page
+});
+
+// Keyboard accessibility improvements
+document.addEventListener('keydown', function(e) {
+    // ESC key closes mobile menu
+    if (e.key === 'Escape') {
+        const navMenu = document.querySelector('.nav-menu');
+        const navToggle = document.querySelector('.nav-toggle');
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    }
+    
+    // Skip to main content with Tab
+    if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+        const main = document.querySelector('main');
+        if (main) {
+            main.focus();
+            e.preventDefault();
+        }
+    }
+});
