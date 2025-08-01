@@ -2,20 +2,23 @@
 
 /* ========== CORE VARIABLES - LIGHT THEME ========== */
 :root {
-    /* BRIGHT & FRESH COLORS */
+    /* HAPPY & VIBRANT COLORS */
     --light-base: #ffffff;
-    --soft-gray: #f8fafc;
-    --warm-purple: #8b5cf6;
-    --ocean-blue: #3b82f6;
-    --fresh-green: #10b981;
-    --coral-pink: #f472b6;
-    --dark-text: #1f2937;
-    --accent-orange: #f59e0b;
-    --sky-blue: #06b6d4;
+    --soft-gray: #fef7ff;
+    --warm-purple: #7c3aed;
+    --ocean-blue: #2563eb;
+    --fresh-green: #059669;
+    --coral-pink: #ec4899;
+    --dark-text: #1e293b;
+    --accent-orange: #ea580c;
+    --sky-blue: #0891b2;
+    --sunshine-yellow: #eab308;
+    --happy-mint: #06d6a0;
+    --cheerful-rose: #f43f5e;
     
     /* LIGHT THEME REPLACEMENTS FOR MISSING VARIABLES */
-    --dark-void: #f1f5f9;
-    --deep-space: #e2e8f0;
+    --dark-void: #f8fafc;
+    --deep-space: #f1f5f9;
     --danger-red: #ef4444;
     
     /* TYPOGRAPHY */
@@ -30,11 +33,19 @@
     --space-xl: 4rem;
     --space-mega: 6rem;
     
-    /* EFFECTS - LIGHT THEME */
-    --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
-    --glow-blue: 0 0 20px rgba(59, 130, 246, 0.4);
-    --glow-green: 0 0 20px rgba(16, 185, 129, 0.4);
-    --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+    /* HAPPY EFFECTS */
+    --glow-purple: 0 0 25px rgba(124, 58, 237, 0.5);
+    --glow-blue: 0 0 25px rgba(37, 99, 235, 0.5);
+    --glow-green: 0 0 25px rgba(5, 150, 105, 0.5);
+    --glow-yellow: 0 0 25px rgba(234, 179, 8, 0.5);
+    --shadow-soft: 0 15px 50px rgba(124, 58, 237, 0.15);
+    --shadow-happy: 0 10px 30px rgba(236, 72, 153, 0.2);
+    
+    /* SUPER HAPPY EFFECTS */
+    --rainbow-glow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.4), 0 0 90px rgba(255, 255, 0, 0.3);
+    --mega-bounce-shadow: 0 20px 60px rgba(255, 105, 180, 0.4), 0 0 100px rgba(255, 165, 0, 0.3);
+    --happy-border: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #f093fb, #f5576c);
+    --sparkle-gradient: linear-gradient(45deg, #ffd700, #ff69b4, #00ced1, #98fb98, #dda0dd, #f0e68c);
 }
 
 /* ========== RESET & BASE ========== */
@@ -46,7 +57,7 @@
 
 body {
     font-family: var(--font-impact);
-    background: linear-gradient(135deg, var(--light-base) 0%, var(--soft-gray) 50%, #f1f5f9 100%);
+    background: linear-gradient(135deg, var(--light-base) 0%, var(--soft-gray) 50%, #fef3c7 100%);
     color: var(--dark-text);
     overflow-x: hidden;
     position: relative;
@@ -61,11 +72,59 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
-    animation: backgroundShift 20s ease-in-out infinite alternate;
+        radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(50, 205, 50, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(135, 206, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+    animation: happyBackgroundShift 15s ease-in-out infinite alternate;
     z-index: -2;
+}
+
+/* Additional happy particles floating around */
+body::after {
+    content: '✨ 🌟 💫 ⭐ 🎉 🌈 💖 🦄 🎈 🎊';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255, 215, 0, 0.4) 3px, transparent 3px),
+        radial-gradient(circle at 85% 35%, rgba(255, 105, 180, 0.4) 2px, transparent 2px),
+        radial-gradient(circle at 35% 75%, rgba(50, 205, 50, 0.4) 2.5px, transparent 2.5px),
+        radial-gradient(circle at 75% 85%, rgba(135, 206, 235, 0.4) 2px, transparent 2px),
+        radial-gradient(circle at 25% 60%, rgba(255, 20, 147, 0.4) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 65% 15%, rgba(255, 165, 0, 0.4) 3px, transparent 3px);
+    background-size: 150px 150px, 200px 200px, 180px 180px, 120px 120px, 250px 250px, 100px 100px;
+    animation: floatingHappiness 12s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes happyBackgroundShift {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    100% { transform: scale(1.2) rotate(5deg); opacity: 1; }
+}
+
+@keyframes floatingHappiness {
+    0%, 100% { 
+        background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%, 50% 50%, 25% 75%;
+        transform: translateY(0) rotate(0deg);
+    }
+    25% { 
+        background-position: 25% 25%, 75% 25%, 25% 75%, 75% 75%, 75% 25%, 50% 50%;
+        transform: translateY(-10px) rotate(2deg);
+    }
+    50% { 
+        background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 100% 0%, 75% 25%;
+        transform: translateY(-5px) rotate(-1deg);
+    }
+    75% { 
+        background-position: 75% 25%, 25% 75%, 75% 25%, 25% 75%, 25% 75%, 100% 0%;
+        transform: translateY(-15px) rotate(3deg);
+    }
 }
 
 @keyframes backgroundShift {
@@ -253,7 +312,7 @@ body::before {
     position: absolute;
     font-size: clamp(8rem, 20vw, 20rem);
     font-weight: 900;
-    color: rgba(139, 92, 246, 0.03);
+    color: rgba(124, 58, 237, 0.12);
     text-transform: uppercase;
     letter-spacing: -5px;
     z-index: -1;
@@ -267,8 +326,8 @@ body::before {
 .vibe-text:nth-child(3) { top: 30%; left: 30%; transform: rotate(-5deg); animation-delay: -4s; }
 
 @keyframes vibeFloat {
-    0% { transform: translateY(0) rotate(var(--rotate, 0deg)); opacity: 0.03; }
-    100% { transform: translateY(-20px) rotate(calc(var(--rotate, 0deg) + 5deg)); opacity: 0.08; }
+    0% { transform: translateY(0) rotate(var(--rotate, 0deg)); opacity: 0.12; }
+    100% { transform: translateY(-20px) rotate(calc(var(--rotate, 0deg) + 5deg)); opacity: 0.18; }
 }
 
 /* MEGA IMPACT BUTTONS */
@@ -289,15 +348,100 @@ body::before {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--warm-purple), var(--coral-pink));
+    background: var(--happy-border);
+    background-size: 400% 400%;
     color: white;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--rainbow-glow);
+    border-radius: 25px;
+    transform: translateY(0);
+    animation: happyGradientFlow 3s ease-in-out infinite, gentleFloat 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '✨';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    opacity: 0;
+    animation: sparkleTrail 2s ease-in-out infinite;
+}
+
+.btn-primary::after {
+    content: '🌟';
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    opacity: 0;
+    animation: sparkleTrail 2s ease-in-out infinite 1s;
+}
+
+@keyframes happyGradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(1deg); }
+}
+
+@keyframes sparkleTrail {
+    0% { left: -30px; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: calc(100% + 30px); opacity: 0; }
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, var(--ocean-blue), var(--fresh-green));
+    background: var(--sparkle-gradient);
+    background-size: 300% 300%;
     color: white;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--rainbow-glow);
+    border-radius: 25px;
+    transform: translateY(0);
+    animation: sparkleFlow 4s ease-in-out infinite, bouncyFloat 2.5s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '🎉';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    opacity: 0;
+    animation: celebrationBounce 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFlow {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes bouncyFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-3px) scale(1.02); }
+    50% { transform: translateY(-1px) scale(1.01); }
+    75% { transform: translateY(-4px) scale(1.03); }
+}
+
+@keyframes celebrationBounce {
+    0%, 90%, 100% { top: -20px; opacity: 0; }
+    5% { top: 10px; opacity: 1; }
+    15% { top: -5px; opacity: 0.8; }
+    25% { top: 5px; opacity: 0.6; }
+    35% { top: -20px; opacity: 0; }
 }
 
 .btn-mega::before {
@@ -316,8 +460,25 @@ body::before {
 }
 
 .btn-mega:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 30px 80px rgba(139, 92, 246, 0.3);
+    transform: translateY(-10px) scale(1.15) rotate(3deg);
+    box-shadow: var(--mega-bounce-shadow);
+    filter: brightness(1.3) saturate(1.4) hue-rotate(10deg);
+    animation: megaHappyBounce 0.6s ease-in-out infinite, rainbowPulse 1s ease-in-out infinite;
+}
+
+@keyframes megaHappyBounce {
+    0%, 100% { transform: translateY(-10px) scale(1.15) rotate(3deg); }
+    25% { transform: translateY(-15px) scale(1.2) rotate(-2deg); }
+    50% { transform: translateY(-8px) scale(1.12) rotate(4deg); }
+    75% { transform: translateY(-12px) scale(1.18) rotate(-1deg); }
+}
+
+@keyframes rainbowPulse {
+    0% { filter: brightness(1.3) saturate(1.4) hue-rotate(0deg); }
+    25% { filter: brightness(1.4) saturate(1.5) hue-rotate(90deg); }
+    50% { filter: brightness(1.5) saturate(1.6) hue-rotate(180deg); }
+    75% { filter: brightness(1.4) saturate(1.5) hue-rotate(270deg); }
+    100% { filter: brightness(1.3) saturate(1.4) hue-rotate(360deg); }
 }
 
 /* ========== 🔥 IMAGE BACKGROUNDS & OVERLAYS 🔥 ========== */
@@ -469,9 +630,25 @@ body::before {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--glow-purple);
-    border-color: var(--ocean-blue);
+    transform: translateY(-15px) scale(1.05) rotate(2deg);
+    box-shadow: var(--rainbow-glow);
+    border: 3px solid transparent;
+    background-image: var(--happy-border), linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(255, 255, 255, 0.95));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: cardCelebration 0.8s ease-in-out infinite, rainbowBorder 2s linear infinite;
+}
+
+@keyframes cardCelebration {
+    0%, 100% { transform: translateY(-15px) scale(1.05) rotate(2deg); }
+    25% { transform: translateY(-20px) scale(1.08) rotate(-1deg); }
+    50% { transform: translateY(-12px) scale(1.03) rotate(3deg); }
+    75% { transform: translateY(-18px) scale(1.07) rotate(-2deg); }
+}
+
+@keyframes rainbowBorder {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 .service-card:hover::before {
@@ -553,10 +730,10 @@ body::before {
     }
 }
 
-/* CRAZY ANIMATIONS */
+/* CRAZY HAPPY ANIMATIONS */
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(2deg); }
 }
 
 @keyframes rotate {
@@ -565,8 +742,40 @@ body::before {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* NEW SUPER HAPPY ANIMATIONS */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+@keyframes tada {
+    0% { transform: scale(1) rotate(0deg); }
+    10%, 20% { transform: scale(0.9) rotate(-10deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(10deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes jello {
+    0%, 100% { transform: skew(0deg, 0deg); }
+    30% { transform: skew(-12.5deg, 0deg); }
+    40% { transform: skew(6.25deg, 0deg); }
+    50% { transform: skew(-3.125deg, 0deg); }
+    65% { transform: skew(1.5625deg, 0deg); }
+    75% { transform: skew(-0.78125deg, 0deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
 }
 
 /* SCROLL ANIMATIONS */
@@ -586,6 +795,64 @@ body::before {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+/* HAPPY UTILITY CLASSES */
+.happy-hover:hover {
+    animation: tada 1s ease-in-out;
+    transform-origin: center;
+}
+
+.wiggle-hover:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.jello-hover:hover {
+    animation: jello 0.8s ease-in-out;
+}
+
+.heartbeat-hover:hover {
+    animation: heartbeat 1.2s ease-in-out;
+}
+
+.rainbow-text {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: happyGradientFlow 3s ease-in-out infinite;
+}
+
+.sparkle-on-hover {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.sparkle-on-hover:hover::before {
+    content: '\u2728 \ud83c\udf1f \u2728';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sparkleAppear 0.6s ease-in-out;
+}
+
+@keyframes sparkleAppear {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.5); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(-5px) scale(1.2); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-25px) scale(0.8); }
+}
+
+/* ENHANCED LOGO EFFECTS */
+.nav-brand:hover {
+    animation: tada 0.8s ease-in-out, rainbow-pulse 1s ease-in-out infinite;
+}
+
+@keyframes rainbow-pulse {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(180deg) brightness(1.2); }
+    100% { filter: hue-rotate(360deg) brightness(1); }
 }
 
 /* ========== STUDIOS PAGE - BRUTAL REDESIGN ========== */
@@ -613,8 +880,9 @@ body::before {
 
 .category-header p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
+    color: var(--warm-purple);
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
 }
 
 /* BRUTAL STUDIOS GRID */
@@ -665,10 +933,11 @@ body::before {
 .studio-header h3 {
     font-size: 1.5rem;
     font-weight: 900;
-    color: var(--dark-text);
+    color: var(--warm-purple);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
 .studio-type {
@@ -699,15 +968,15 @@ body::before {
 /* BRUTAL PLATFORM LINKS */
 .studio-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .platform-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0;
@@ -716,8 +985,10 @@ body::before {
     transition: all 0.3s ease;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    width: fit-content;
 }
 
 .platform-link:hover {
@@ -1298,16 +1569,37 @@ body::before {
 
 /* 🔥 LOGO HOVER EFFECTS 🔥 */
 .company-logo-enhanced img:hover {
-    transform: scale(1.2) rotate(360deg) !important;
-    animation: none;
+    transform: scale(1.3) rotate(720deg) !important;
+    animation: logoParty 1s ease-in-out infinite;
     box-shadow: 
-        0 0 40px rgba(255, 165, 0, 1),
-        0 0 80px rgba(255, 165, 0, 0.8),
-        0 0 120px rgba(255, 165, 0, 0.6);
+        0 0 50px rgba(255, 105, 180, 1),
+        0 0 100px rgba(255, 165, 0, 0.8),
+        0 0 150px rgba(50, 205, 50, 0.6),
+        0 0 200px rgba(135, 206, 235, 0.4);
     filter: 
-        drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))
-        brightness(1.2)
-        saturate(1.3);
+        drop-shadow(0 0 30px rgba(255, 20, 147, 0.9))
+        brightness(1.4)
+        saturate(1.5)
+        hue-rotate(180deg);
+}
+
+@keyframes logoParty {
+    0%, 100% { 
+        transform: scale(1.3) rotate(720deg);
+        filter: hue-rotate(0deg) brightness(1.4) saturate(1.5);
+    }
+    25% { 
+        transform: scale(1.4) rotate(750deg);
+        filter: hue-rotate(90deg) brightness(1.5) saturate(1.6);
+    }
+    50% { 
+        transform: scale(1.35) rotate(690deg);
+        filter: hue-rotate(180deg) brightness(1.6) saturate(1.7);
+    }
+    75% { 
+        transform: scale(1.45) rotate(780deg);
+        filter: hue-rotate(270deg) brightness(1.5) saturate(1.6);
+    }
 }
 
 @keyframes logoFloat {
@@ -2011,18 +2303,7 @@ body::before {
 }
 
 .space-slide-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.8) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0.3) 100%
-    );
-    z-index: 2;
+    display: none;
 }
 
 .space-slide-content {
@@ -2593,8 +2874,8 @@ body::before {
 }
 
 .studio-card-with-bg .studio-header h3 {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.95);
+    color: var(--warm-purple);
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
     font-weight: 800;
 }
 
@@ -2621,6 +2902,122 @@ body::before {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
     color: #ffffff;
+}
+
+/* ========== 🌈 INSTANT HAPPINESS CLASSES 🌈 ========== */
+/* Apply these classes to any HTML element for instant happy effects! */
+
+.super-happy {
+    animation: tada 2s ease-in-out infinite;
+    filter: brightness(1.2) saturate(1.3);
+}
+
+.rainbow-border {
+    border: 3px solid transparent;
+    background: var(--happy-border);
+    background-clip: border-box;
+    animation: rainbowBorder 2s linear infinite;
+}
+
+.bouncy-fun {
+    animation: gentleFloat 2s ease-in-out infinite, wiggle 3s ease-in-out infinite;
+}
+
+.sparkle-magic {
+    position: relative;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.sparkle-magic::after {
+    content: '\u2728\ud83c\udf1f\u2728';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.8em;
+    animation: sparkleRotate 3s linear infinite;
+}
+
+@keyframes sparkleRotate {
+    0% { transform: rotate(0deg) scale(1); opacity: 0.8; }
+    50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+    100% { transform: rotate(360deg) scale(1); opacity: 0.8; }
+}
+
+.celebration-mode {
+    animation: jello 1s ease-in-out infinite, rainbowPulse 2s ease-in-out infinite;
+    box-shadow: var(--rainbow-glow);
+}
+
+.happy-glow {
+    box-shadow: 
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 40px rgba(255, 165, 0, 0.4),
+        0 0 60px rgba(50, 205, 50, 0.3);
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% { 
+        box-shadow: 
+            0 0 20px rgba(255, 105, 180, 0.6),
+            0 0 40px rgba(255, 165, 0, 0.4),
+            0 0 60px rgba(50, 205, 50, 0.3);
+    }
+    100% { 
+        box-shadow: 
+            0 0 30px rgba(255, 105, 180, 0.8),
+            0 0 60px rgba(255, 165, 0, 0.6),
+            0 0 90px rgba(50, 205, 50, 0.5);
+    }
+}
+
+.party-time {
+    animation: 
+        tada 1s ease-in-out infinite,
+        rainbowBorder 2s linear infinite,
+        floatingHappiness 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.joy-burst:hover {
+    animation: 
+        heartbeat 0.6s ease-in-out,
+        sparkleAppear 0.8s ease-in-out,
+        rainbowPulse 1s ease-in-out infinite;
+}
+
+/* Text animations */
+.dancing-text {
+    display: inline-block;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+.dancing-text:nth-child(2n) {
+    animation-delay: 0.1s;
+}
+
+.dancing-text:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+.happy-fade-in {
+    opacity: 0;
+    animation: happyFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes happyFadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.8) rotate(-5deg); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: translateY(-5px) scale(1.1) rotate(2deg); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1) rotate(0deg); 
+    }
 }
 
 /* Mobile responsive for background cards */
