@@ -79,6 +79,17 @@ body::before {
     position: relative;
     display: inline-block;
     animation: happyBounce 3s ease-in-out infinite;
+    color: #ffffff;
+    text-shadow: 
+        3px 3px 0px #000000,
+        -3px -3px 0px #000000,
+        3px -3px 0px #000000,
+        -3px 3px 0px #000000,
+        0px 3px 0px #000000,
+        3px 0px 0px #000000,
+        0px -3px 0px #000000,
+        -3px 0px 0px #000000,
+        4px 4px 8px rgba(0,0,0,0.9);
 }
 
 .glitch::before,
@@ -94,16 +105,18 @@ body::before {
 
 .glitch::before {
     animation: gentleGlow1 4s ease-in-out infinite;
-    color: var(--lovely-pink);
+    color: rgba(255, 107, 107, 0.8);
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .glitch::after {
     animation: gentleGlow2 4s ease-in-out infinite 1s;
-    color: var(--bright-blue);
+    color: rgba(78, 205, 196, 0.8);
     z-index: -2;
-    opacity: 0.4;
+    opacity: 0.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 @keyframes happyBounce {
@@ -2768,6 +2781,162 @@ html {
         font-size: 16px; /* Prevent zoom on iOS */
         min-height: 44px; /* Better touch targets */
     }
+}
+
+/* ========== TEXT VISIBILITY IMPROVEMENTS ========== */
+
+/* Strong text shadows for all headings on background images */
+h1, h2, h3 {
+    text-shadow: 
+        2px 2px 0px #000000,
+        -2px -2px 0px #000000,
+        2px -2px 0px #000000,
+        -2px 2px 0px #000000,
+        3px 3px 6px rgba(0,0,0,0.8);
+}
+
+/* Enhanced overlay for better text visibility */
+.hero-overlay,
+.section-overlay {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(2px);
+}
+
+/* White text with strong shadows on dark overlays */
+.hero-content h1,
+.hero-content p,
+.hero-subtitle {
+    color: #ffffff !important;
+    text-shadow: 
+        3px 3px 0px #000000,
+        -3px -3px 0px #000000,
+        3px -3px 0px #000000,
+        -3px 3px 0px #000000,
+        4px 4px 8px rgba(0,0,0,0.9) !important;
+}
+
+/* Strong contrast for section content */
+.section h2,
+.section h3,
+.section-title {
+    color: #ffffff !important;
+    text-shadow: 
+        3px 3px 0px #000000,
+        -3px -3px 0px #000000,
+        3px -3px 0px #000000,
+        -3px 3px 0px #000000,
+        4px 4px 8px rgba(0,0,0,0.9) !important;
+}
+
+/* Company info text visibility */
+.company-description h3,
+.company-description p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* News section text visibility */
+.news-title-cyber,
+.news-subtitle {
+    color: #ffffff !important;
+    text-shadow: 
+        2px 2px 0px #000000,
+        -2px -2px 0px #000000,
+        2px -2px 0px #000000,
+        -2px 2px 0px #000000,
+        3px 3px 6px rgba(0,0,0,0.8) !important;
+}
+
+/* Contact section text visibility */
+.contact-subtitle,
+.contact-label,
+.contact-value {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Blog section text on rainbow background */
+.blog-subtitle {
+    color: #ffffff !important;
+    text-shadow: 
+        2px 2px 0px #000000,
+        -2px -2px 0px #000000,
+        2px -2px 0px #000000,
+        -2px 2px 0px #000000,
+        3px 3px 6px rgba(0,0,0,0.9) !important;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* Vibe text more visible */
+.vibe-text {
+    color: rgba(255, 255, 255, 0.15) !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Service cards text enhancement */
+.service-content h3,
+.service-content p {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7) !important;
+}
+
+/* Slider section text visibility */
+.slider-subtitle {
+    color: #ffffff !important;
+    text-shadow: 
+        2px 2px 0px #000000,
+        -2px -2px 0px #000000,
+        2px -2px 0px #000000,
+        -2px 2px 0px #000000,
+        3px 3px 6px rgba(0,0,0,0.9) !important;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    display: inline-block;
+}
+
+/* Space slide content visibility */
+.space-slide-content h3,
+.space-slide-content p {
+    color: #ffffff !important;
+    text-shadow: 
+        2px 2px 0px #000000,
+        -2px -2px 0px #000000,
+        2px -2px 0px #000000,
+        -2px 2px 0px #000000,
+        2px 2px 4px rgba(0,0,0,0.8) !important;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    margin-bottom: 0.5rem;
+}
+
+/* Company stats text visibility */
+.stat-number-cyber,
+.stat-label-cyber {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Make sure all cyber frame content is visible */
+.cyber-frame,
+.slider-cyber-frame,
+.news-cyber-frame,
+.contact-cyber-frame,
+.company-cyber-frame,
+.blog-cyber-frame {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* News cards text visibility */
+.news-card-cyber h3 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
 }
 
 /* ========== MEGA FUNKY ADDITIONS ========== */
