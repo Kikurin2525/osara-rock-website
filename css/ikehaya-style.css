@@ -1,17 +1,20 @@
-/* 🌟 HAPPY BRIGHT MEGA IMPACT STYLE 🌟 */
+/* 🎪 MEGA FUNKY HAPPY STYLE 🎪 */
 
 /* ========== CORE VARIABLES ========== */
 :root {
-    /* HAPPY BRIGHT COLORS */
-    --sunny-bg: #fef3c7;
-    --warm-white: #fffbeb;
-    --happy-orange: #fb923c;
-    --bright-blue: #3b82f6;
-    --cheerful-green: #10b981;
-    --lovely-pink: #ec4899;
-    --deep-text: #1f2937;
-    --soft-purple: #8b5cf6;
-    --golden-yellow: #fbbf24;
+    /* MEGA FUNKY COLORS */
+    --funky-red: #ff6b6b;
+    --ocean-blue: #4ecdc4;
+    --sky-blue: #45b7d1;
+    --sunshine-yellow: #f9ca24;
+    --electric-purple: #6c5ce7;
+    --bubblegum-pink: #ff9ff3;
+    --lime-green: #55efc4;
+    --coral-orange: #ffa502;
+    --deep-text: #2d3436;
+    --funky-white: #ffffff;
+    --rainbow-gradient: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #6c5ce7, #ff9ff3);
+    --rainbow-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #ff9a9e 50%, #fecfef 75%, #fecfef 100%);
     
     /* TYPOGRAPHY */
     --font-impact: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
@@ -41,11 +44,13 @@
 
 body {
     font-family: var(--font-impact);
-    background: linear-gradient(135deg, var(--sunny-bg) 0%, var(--warm-white) 50%, #fef7ed 100%);
+    background: var(--rainbow-bg);
+    background-size: 400% 400%;
     color: var(--deep-text);
     overflow-x: hidden;
     position: relative;
     line-height: 1.6;
+    animation: backgroundShift 15s ease-in-out infinite;
 }
 
 /* GENTLE HAPPY BACKGROUND ANIMATIONS */
@@ -2762,5 +2767,236 @@ html {
     .form-select-cyber {
         font-size: 16px; /* Prevent zoom on iOS */
         min-height: 44px; /* Better touch targets */
+    }
+}
+
+/* ========== MEGA FUNKY ADDITIONS ========== */
+
+/* Rainbow border animation */
+@keyframes borderGlow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Floating bounce for blog elements */
+@keyframes floatBounce {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(2deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    75% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Spinning decorations */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Bouncing elements */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Pulsing effect */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+    50% { transform: scale(1.08); box-shadow: 0 0 0 15px rgba(255, 107, 107, 0); }
+}
+
+/* Text wobble */
+@keyframes textWobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+/* Funky hover effects */
+.blog-card-funky:hover {
+    transform: translateY(-10px) rotate(2deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.blog-card-funky:hover .blog-glow-effect {
+    opacity: 1;
+}
+
+/* Super funky button effects */
+.btn-mega {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.btn-mega:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.btn-mega::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-mega:hover::before {
+    left: 100%;
+}
+
+/* Navbar funky effects */
+.nav-brand {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.nav-brand:hover {
+    transform: scale(1.1) rotate(5deg);
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+}
+
+.nav-menu a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    transform: translateY(-2px) scale(1.1);
+    color: var(--funky-red);
+}
+
+/* Hero section mega effects */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '🎉✨🚀💎🎯💡🌟🎪🎨🔥';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    animation: floatingEmojis 25s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+@keyframes floatingEmojis {
+    0% { transform: translateY(0px) rotate(0deg); }
+    20% { transform: translateY(-20px) rotate(3deg); }
+    40% { transform: translateY(10px) rotate(-2deg); }
+    60% { transform: translateY(-15px) rotate(4deg); }
+    80% { transform: translateY(5px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Service cards funky enhancement */
+.service-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) rotate(3deg) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--rainbow-gradient);
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+.service-card:hover::before {
+    opacity: 0.1;
+    transform: scale(1);
+}
+
+/* Footer funky enhancement */
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::after {
+    content: '🎪🌈✨💫🎨🎯🚀💎';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: footerDance 20s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+@keyframes footerDance {
+    0%, 100% { transform: translateX(0px); }
+    25% { transform: translateX(10px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(8px); }
+}
+
+/* Ultra responsive funky */
+@media (max-width: 768px) {
+    .float-emoji {
+        font-size: 2rem !important;
+    }
+    
+    .hero::after {
+        font-size: 2rem;
+        opacity: 0.05;
+    }
+    
+    .blog-card-funky {
+        min-width: 280px;
+    }
+    
+    .nav-brand {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .blog-card-funky:hover,
+    .service-card:hover,
+    .btn-mega:hover,
+    .nav-brand:hover,
+    .nav-menu a:hover {
+        transform: none;
+    }
+    
+    .hero::after,
+    .footer::after {
+        animation: none;
     }
 }
